@@ -37,7 +37,7 @@ if (isset($_GET['action']))
         
         case 'addcommentsubmitted':
             $controller_name = 'BlogController';
-            $action = 'addcommentAction';
+            $action = 'addcommentsubmittedAction';
             break;
         
         case 'login':

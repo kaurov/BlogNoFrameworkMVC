@@ -36,9 +36,12 @@
                 ?>
                 Published: <?php echo $escapeHtml(date('jS \of F Y', strtotime($postArray['date_created']))); 
                 
+                /*
                 echo $is_mini_mode ? " | " : "<br />";
                 ?> 
-                Tags: <?= $escapeHtml($postArray['tags']); ?>   
+                Tags: <?= $escapeHtml($postArray['tags']); 
+                */
+                ?>   
             </p> 
             <?php
             echo $is_mini_mode ? "<hr />" : "";

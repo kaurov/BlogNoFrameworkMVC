@@ -27,6 +27,8 @@ CREATE TABLE `comment` (
   `post_id` int(11) NOT NULL,     -- Post ID this comment belongs to  
   `content` text NOT NULL,        -- Text
   `author` varchar(128) NOT NULL, -- Author's name who created the comment  
+  `author_url` varchar(128) DEFAULT NULL, -- Author's URL of homepage 
+  `author_email` varchar(128) DEFAULT NULL, -- Author's email
   `date_created` DATETIME DEFAULT   CURRENT_TIMESTAMP -- Creation date          
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='utf8_general_ci';
 

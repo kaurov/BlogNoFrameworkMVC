@@ -53,6 +53,15 @@ class BlogController
         if ($res) $this->redirectAction();
         else $this->redirectAction("/?action=add&error=error");
     }
+    
+    
+    
+    public function addcommentsubmittedAction($request)
+    {
+        $res = $this->blogManager->addComment($request['name'], $request['content'], $request['post_id'], $request['email'], $request['url']);
+        if ($res) $this->redirectAction("/?action=post&id=".$request['post_id']);
+        else $this->redirectAction("/?action=post&id={$request['post_id']}&error=error");
+    }
 
 
     

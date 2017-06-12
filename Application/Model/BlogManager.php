@@ -145,10 +145,11 @@ class BlogManager
                     'post_id' => $row['post_id'],
                     'content' => $row['content'],
                     'author' => $row['author'],
+                    'author_url' => $row['author_url'],
+                    'author_email' => $row['author_email'],
                     'date_created' => $row['date_created']
                 );
             }
-            // Free result set
             $result->close();
         }               
         else
@@ -169,6 +170,27 @@ class BlogManager
         } else
             die($this->db->error);
     }
+    
+    
+    
+    public function addComment($name, $content, $post_id, $email="", $url="")
+    {
+        $query =  "INSERT INTO comment
+                            (`post_id`, `content`, `author`, `author_email`, `author_url`) "
+                . "VALUES   ('%d', '%s', '%s', '%s', '%s')";
+        $query = sprintf($query, $this->db->real_escape_string($post_id), 
+                                $this->db->real_escape_string($content),  
+                                $this->db->real_escape_string($name),  
+                                $this->db->real_escape_string($email),  
+                                $this->db->real_escape_string($url) );
+        if ($result = $this->db->query($query))
+        {
+            return true;
+        } else
+            die($this->db->error);
+    }
+    
+    
 
 
 }
