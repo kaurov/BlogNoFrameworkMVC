@@ -7,7 +7,6 @@ $appConfig = require __DIR__ . '/../config/application.config.php';
 if (isset($_GET['action']))
 {
     // router 
-
     switch ($_GET['action'])
     {
         case 'about':

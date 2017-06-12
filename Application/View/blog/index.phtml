@@ -15,7 +15,10 @@
                 ?>
                 <h3>
                     <a href="/?action=post&id=<?= $postArray['id'] ?>">
-                        <?= $escapeHtml($postArray['title']); ?>
+                        <?php 
+                        echo $escapeHtml(date('d.m.Y', strtotime($postArray['date_created']))).": ";
+                        echo $escapeHtml($postArray['title']); 
+                        ?>
                     </a>    
                 </h3>
                 <?php
@@ -25,7 +28,7 @@
             }
             ?>
             <div class="content">
-                <?= $escapeHtml($postArray['content']);
+                <?=  substr( strip_tags($postArray['content']), 0, 300);
             ?>
             </div>
             <p>
@@ -35,12 +38,6 @@
                 echo $is_mini_mode ? " | " : "<br />";
                 ?>
                 Published: <?php echo $escapeHtml(date('jS \of F Y', strtotime($postArray['date_created']))); 
-                
-                /*
-                echo $is_mini_mode ? " | " : "<br />";
-                ?> 
-                Tags: <?= $escapeHtml($postArray['tags']); 
-                */
                 ?>   
             </p> 
             <?php

@@ -65,14 +65,13 @@ class BlogManager
     public function findAllPublishedPosts()
     {
         $posts = array();
-        $result = $this->db->query("SELECT * FROM post WHERE status > 0");
         $query = ""
                 . "SELECT post.*, user.name as author "
                 . "FROM post "
                 . "LEFT JOIN user ON post.id_user = user.id "
                 . "WHERE status > 0 "
                 . "ORDER BY post.date_created DESC";
-        //$query = sprintf($query, $this->db->real_escape_string($id));
+        $result = $this->db->query($query);
         if ($result)
         {
             // Cycle through results
@@ -81,7 +80,8 @@ class BlogManager
                     'id' => $row['id'],
                     'title' => $row['title'],
                     'content' => $row['content'],
-                    'author' => $row['id_user'],
+                    'author' => $row['author'],
+                    'id_user' => $row['id_user'],
                     'date_created' => $row['date_created'],
                     'tags' => '' //$row['firstname']
                 );
@@ -170,7 +170,6 @@ class BlogManager
         } else
             die($this->db->error);
     }
-    
     
     
     public function addComment($name, $content, $post_id, $email="", $url="")
