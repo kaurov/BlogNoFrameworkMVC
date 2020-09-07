@@ -1,20 +1,30 @@
 # BlogNoFrameworkMVC
 Create MVC blog without using any PHP Framework or CMS.
 
-I created this project as a test task for Check24 in 2017
-This project is interecting since it explaince the architecture from scratch -- we use no Framework and no CMS.
+I created this project as a test task for Check24 in 2017.
+This source code was accepted by Check24 and I received the job proposal.
+Please use it for education only. I hope that the task would be unique for each developer. 
+This project is interesting since it explains the architecture from scratch -- we use no Framework and no CMS.
 
 
-Please check MySQL settings before to start config/application.config.php
+### How to install:
+* configure MySQL connection in config/application.config.php
+* create a virtual host http://blognoframeworkmvc.test and set the default folder /public for it
+* if links link /about cannot be found then ensure that /public/.htaccess or configure NGINX 
+        `location / {
+                try_files $uri $uri/ /index.php?$args;
+        }`
+* open the URL http://blognoframeworkmvc.test in your browser. If your MySQl is configured properly, then data/schema.mysql.sql should be executed automatically during the first run. 
+ 
 
-Please open in your browser http://localhost/BlogNoFrameworkMVC/public/ to see tha application working
 
 
-what can be improved in the future:
+### What can be improved in the future:
 * use namespaces
-* use interfaces
 * Add ORM since I use hardcoded mySQL commands
-* Use databse Migrations
-* use PHP 7 -- this app was created using PHP5 (that was the task requirement)
+* Use translations
+* Use database Migrations
+* use PHP 7 -- this app was created using PHP5 acording to Check24 task requirement.
 * What else?
 
+Feel free to develop it and make pull requests on https://github.com/kaurov/BlogNoFrameworkMVC/

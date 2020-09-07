@@ -1,0 +1,116 @@
+<div class="row">
+
+    <div class="col-md-8">
+
+        <?php
+        $is_mini_mode = false;
+        $escapeHtml = 'htmlspecialchars';
+        $postArray = isset($variables) ? $variables : [];
+
+        if ($postArray)
+        {
+            if ($is_mini_mode)
+            {
+                ?>
+                <h3>
+                    <a href="/?action=post&id=<?= $postArray['id'] ?>">
+                        <?= $escapeHtml($postArray['title']); ?>
+                    </a>
+                </h3>
+                <?php
+            } else
+            {
+                echo '<h1>' . $escapeHtml($postArray['title']) . '</h1>';
+            }
+            ?>
+            <div class="content">
+                <?= $postArray['content'];
+                ?>
+            </div>
+
+            <div class="postDetails">
+                <p>
+                    Author: <?php
+                    echo $escapeHtml($postArray['author']);
+
+                    echo $is_mini_mode ? " | " : "<br />";
+                    ?>
+                    Published: <?php echo $escapeHtml(date('jS \of F Y', strtotime($postArray['date_created'])));
+
+                    echo $is_mini_mode ? " | " : "<br />
+                </p>";
+
+
+
+                if(!$is_mini_mode)
+                {
+
+                    if($postArray['comment'])
+                    {
+                        echo "<h3>Comments:</h3>";
+                        foreach ($postArray['comment'] as $key => $row)
+                        {
+                            echo "
+                                <h4>{$row['content']}</h4>
+                                {$row['author_email']} 
+                                <br />{$row['author_url']} 
+                                <br />{$row['author']} on  
+                                {$row['date_created']}";
+                            echo "<hr />";
+                        }
+                    }
+
+
+                    ?>
+                    <h3>Leave a comment</h3>
+                    <form action="/?action=addcommentsubmitted" class="form-horizontal"  method="post">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Name*:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" name="name"
+                                       placeholder="Enter your Name"
+                                       required=true>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="url">URL:</label>
+                            <div class="col-sm-10">
+                                <input type="url" class="form-control" id="url" name="url" placeholder="Enter your homepage URL">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="content">Remark*:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="content" name="content" cols="120"></textarea>
+                                <input type="hidden" class="form-control" id="post_id" name="post_id" value="<?=$postArray['id']?>">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                    <?php
+
+
+                }
+                ?>
+            </div>
+
+            <?php
+            echo $is_mini_mode ? "<hr />" : "";
+        }
+        ?>
+
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<h1>Blog Posts</h1>
+<div class="row">
+
+    <div class="col-md-8">
+
+        <?php
+        $is_mini_mode = true;
+        $escapeHtml = 'htmlspecialchars';
+        $posts = isset($variables) ? $variables : [];
+
+        foreach ($posts as $postArray)
+        {
+            if ($is_mini_mode)
+            {
+                ?>
+                <h3>
+                    <a href="/?action=post&id=<?= $postArray['id'] ?>">
+                        <?php
+                        echo $escapeHtml(date('d.m.Y', strtotime($postArray['date_created']))).": ";
+                        echo $escapeHtml($postArray['title']);
+                        ?>
+                    </a>
+                </h3>
+                <?php
+            } else
+            {
+                echo '<h1>' . $escapeHtml($postArray['title']) . '</h1>';
+            }
+            ?>
+            <div class="content">
+                <?=  substr( strip_tags($postArray['content']), 0, 300);
+                ?>
+            </div>
+            <p>
+                Author: <?php
+                echo $escapeHtml($postArray['author']);
+
+                echo $is_mini_mode ? " | " : "<br />";
+                ?>
+                Published: <?php echo $escapeHtml(date('jS \of F Y', strtotime($postArray['date_created'])));
+                ?>
+            </p>
+            <?php
+            echo $is_mini_mode ? "<hr />" : "";
+        }
+        ?>
+
+    </div>
+</div>
