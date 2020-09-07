@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Test PHP Blog application without framework</title>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="./css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./css/bootstrap-theme.min.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./css/style.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="./img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <script type="text/javascript" src="/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=tzzh9mce5uxzm7y4cnx1062zf4p6gkf6ggg9jgvf61dnv98w"></script>
+    <script src="https://cdn.tiny.cloud/1/tzzh9mce5uxzm7y4cnx1062zf4p6gkf6ggg9jgvf61dnv98w/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+
+
+
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!-- Page header -->
+        <div class="col-md-4">
+            <div class="app-caption"><a href="/"><img src="./img/Check24_Logo.png" height="60" alt="Check24 Logo" /></a> Blog Name</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+
+
+
+
+
+
+
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <ul class="nav navbar-nav">
+
+                        <?php
+                        if ($_SERVER['REQUEST_URI'] == "/")
+                            echo "<li class='active'><a href='#'>Home</a></li>";
+                        else
+                            echo "<li><a href='/'>Home</a></li>";
+
+                        if (!isset($_SESSION['adminid']) OR !$_SESSION['adminid'])
+                        {
+                            if ($_SERVER['REQUEST_URI'] == "/login")
+                                echo "<li class='active'><a href='#'>Login</a></li>";
+                            else
+                                echo "<li><a href='/login'>Login</a></li>";
+                        }
+
+
+
+                        if (isset($_SESSION['adminid']) AND $_SESSION['adminid']>0)
+                        {
+                            if ($_SERVER['REQUEST_URI'] == "/?action=addpost")
+                                echo "<li class='active'><a href='#'>Add entry</a></li>";
+                            else
+                                echo "<li><a href='/?action=addpost'>Add entry</a></li>";
+
+
+                            echo "<li><a href='/logout'>Logout</a></li>";
+                        }
+
+
+                        if ($_SERVER['REQUEST_URI'] == "/about")
+                            echo "<li class='active'><a href='#'>Contacts</a></li>";
+                        else
+                            echo "<li><a href='/about'>Contacts</a></li>";
+                        ?>
+                    </ul>
+                </div>
+            </nav>
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Breadcrumbs -->
+            <?php /* echo $this->pageBreadcrumbs()->render(); */ ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Page content placeholder -->
+            <?= $this->content; ?>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <p>&copy; 2020 by Eugen Kaurov. All rights reserved. <a href="/about">Imprint (contacts)</a></p>
+    </footer>
+</div>
+<?php /* = $this->inlineScript() */ ?>
+</body>
+</html>

@@ -1,15 +1,18 @@
 <?php
 
-return array(
-    // connection parameters
-    'connection' => array(
+return [
+    // to start you need manually create the user in your MySQL:
+    // CREATE USER 'blog'@'localhost' IDENTIFIED BY 'testpasBlogsword';
+
+    // database connection parameters
+    'connection' => [
         'database_type' => 'mysqli',
-        'params' => array(
+        'params' => [
             'host' => 'localhost',
             'port' => '3306',
-            'user' => 'root',
-            'password' => '',
+            'user' => 'blog',
+            'password' => 'testpasBlogsword',
             'dbname' => 'noframeworkblog',
-        )
-    )
-);
+        ]
+    ]
+];
