@@ -1,56 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="#02 refactoring: folders naming, use interfaces, auto installing on the 1st run if server is configured,  sha512 password hashing">
-      <change afterPath="$PROJECT_DIR$/.idea/BlogNoFrameworkMVC.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit/phpunit-6.5.14.phar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CmsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ControllerInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/BlogManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/DbConnectionManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/BlogView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Layout/layout.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/blog/add.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/blog/post.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/cms/about.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Controller/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Model/BlogManager.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Model/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/UserManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/View/Init.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/View/Layout/layout.phtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/View/blog/add.phtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/View/blog/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/blog/list.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/View/blog/post.phtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/View/index/about.phtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/View/index/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/auth/login.phtml" afterDir="false" />
+    <list default="true" id="a5f212c8-3cf4-4e49-adb3-effefe029a30" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/application.config.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/application.config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/schema.mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/data/schema.mysql.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/adminer/adminer-4.3.1-en.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/css/bootstrap-theme.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/jquery-2.2.4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery-2.2.4.min.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="109">
-              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
             </state>
           </provider>
         </entry>
@@ -92,12 +44,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="238">
-                <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <first_editor relative-caret-position="209">
+                <caret line="29" selection-start-line="29" selection-end-line="29" />
               </first_editor>
               <second_editor />
             </state>
@@ -108,16 +60,16 @@
         <entry file="file://$PROJECT_DIR$/src/Model/BlogManager.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+              <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data/schema.mysql.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="68" column="16" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="16" />
+            <state relative-caret-position="78">
+              <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -235,7 +187,7 @@
       <workItem from="1599134131364" duration="2014000" />
       <workItem from="1599473819607" duration="1791000" />
       <workItem from="1599475680601" duration="1819000" />
-      <workItem from="1599477525210" duration="791000" />
+      <workItem from="1599477525210" duration="1279000" />
     </task>
     <task id="LOCAL-00001" summary="#02 restructure + use namespaces">
       <created>1599130779406</created>
@@ -244,11 +196,18 @@
       <option name="project" value="LOCAL" />
       <updated>1599130779406</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="#02 refactoring: folders naming, use interfaces, auto installing on the 1st run if server is configured,  sha512 password hashing">
+      <created>1599478387596</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599478387596</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9762000" />
+    <option name="totallyTimeSpent" value="10250000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -261,7 +220,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27125505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -399,24 +357,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/schema.mysql.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="68" column="16" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/BlogManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
@@ -430,10 +381,17 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="238">
-            <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <first_editor relative-caret-position="209">
+            <caret line="29" selection-start-line="29" selection-end-line="29" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/schema.mysql.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
         </state>
       </provider>
     </entry>
