@@ -10,10 +10,7 @@ This project is interesting since it explains the architecture from scratch -- w
 ### How to install:
 * configure MySQL connection in config/application.config.php
 * create a virtual host http://blognoframeworkmvc.test and set the default folder /public for it
-* if links link /about cannot be found then ensure that /public/.htaccess or configure NGINX 
-        `location / {
-                try_files $uri $uri/ /index.php?$args;
-        }`
+* if links link /about cannot be found then ensure that /public/.htaccess or configure NGINX similar to /config/nginx.BlogNoFrameworkMVC.conf
 * open the URL http://blognoframeworkmvc.test in your browser. If your MySQl is configured properly, then data/schema.mysql.sql should be executed automatically during the first run. 
  
 
